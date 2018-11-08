@@ -1,11 +1,12 @@
 # Visual_Question_Answering
 
 This is a tensorflow implementation of a VQA network.
-Inputs:
+
+# Inputs
 1.A Picture
 2.A Question
 
-Output:
+# Output
 The network provides a short answer to the question based on the most frequent short answers.
 
 # Details
