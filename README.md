@@ -1,7 +1,6 @@
 # Visual_Question_Answering
 
 This is a Tensorflow implementation of a [VQA network](https://arxiv.org/pdf/1704.03162.pdf) with some minor changes.
-![alt text](https://github.com/mttoghani/Visual_Question_Answering/blob/master/Network.JPG)
 
 # Inputs
 The network takes a picture and a question about the picture.
@@ -13,7 +12,7 @@ The network provides a short answer to the question based on the most frequent s
 ![alt text](https://github.com/mttoghani/Visual_Question_Answering/blob/master/Examples.JPG)
 
 # Network structure
-
+![alt text](https://github.com/mttoghani/Visual_Question_Answering/blob/master/Network.JPG)
 
 # Details
 In this network a various range of methods and layers including attention, LSTM, conv, dropout, decon, fc and etc. have been used.
