@@ -17,6 +17,9 @@ The network provides a short answer to the question based on the most frequent s
 # Details
 In this network a various range of methods and layers including attention, LSTM, conv, dropout, decon, fc and etc. have been used.
 
+# Instructions
+To be updated ...
+
 # Contact
 For any further question, please contact me:
 toghani_mt@ee.sharif.edu
