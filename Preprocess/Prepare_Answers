@@ -1,0 +1,55 @@
+import json
+import pickle
+import numpy as np
+import string
+
+train_answers = json.load(open('./Dataset/mscoco_train2014_annotations.json', 'r'))
+all_answers = {}
+for annotation in train_answers["annotations"]:
+    if (all_answers.has_key(annotation["multiple_choice_answer"].encode()) == False):
+        all_answers[annotation["multiple_choice_answer"].encode()] = 1
+    else:
+        all_answers[annotation["multiple_choice_answer"].encode()] += 1
+
+pickle.dump(all_answers, open( "./Result/All_Answers", "wb"))
+
+Find_Th = True
+Th = 0
+siz = 0
+while(Find_Th):
+    counter = 0
+    for i in all_answers:
+        if(all_answers[i]>Th+1):
+            counter+=1
+    if(counter < 1000):
+        Find_Th = False
+    else:
+        Th += 1
+        siz = counter
+
+answers_list = []
+for i in all_answers:
+    if (all_answers[i] > Th):
+        answers_list.append(i)
+
+answers_indices = dict((w, i) for i, w in enumerate(answers_list))
+indices_answers = dict((i, w) for i, w in enumerate(answers_list))
+
+pickle.dump(answers_indices, open( "./Result/Answers_Indices", "wb"))
+pickle.dump(indices_answers, open( "./Result/Indices_Answers", "wb"))
+
+###########################################################################
+counter = 0
+# answers_one_hoted_list = []
+answers_train_list = []
+for annotation in train_answers["annotations"]:
+    if (answers_indices.has_key(annotation["multiple_choice_answer"].encode()) == True):
+        i = answers_indices[annotation["multiple_choice_answer"].encode()]
+    else:
+        i = siz
+    # z = np.zeros(shape=(siz + 1), dtype=np.bool)
+    # z[i] = 1
+    # answers_one_hoted_list.append(z)
+    answers_train_list.append(i)
+# pickle.dump(answers_one_hoted_list, open( "./Result/Answers_One_Hot", "wb"))
+pickle.dump(answers_train_list, open( "./Result/Answers_Train", "wb"))
