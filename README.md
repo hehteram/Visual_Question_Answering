@@ -1,11 +1,10 @@
 # Visual_Question_Answering
 
 This is a Tensorflow implementation of a [VQA network](https://arxiv.org/pdf/1704.03162.pdf) with some minor changes.
+![alt text](https://github.com/mttoghani/Blockchain-based_Data_Market/blob/master/Poster.jpg)
 
 # Inputs
-1.A Picture
-2.A Question
-The network consider the question about the picture.
+The network takes a picture and a question about the picture.
 
 # Output
 The network provides a short answer to the question based on the most frequent short answers.
