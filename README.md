@@ -8,11 +8,11 @@ The network takes a picture and a question about the picture.
 # Output
 The network provides a short answer to the question based on the most frequent short answers.
 
-# Example
-![alt text](https://github.com/mttoghani/Visual_Question_Answering/blob/master/Examples.JPG)
-
 # Network structure
 ![alt text](https://github.com/mttoghani/Visual_Question_Answering/blob/master/Network.JPG)
+
+# Example
+![alt text](https://github.com/mttoghani/Visual_Question_Answering/blob/master/Examples.JPG)
 
 # Details
 In this network a various range of methods and layers including attention, LSTM, conv, dropout, decon, fc and etc. have been used.
